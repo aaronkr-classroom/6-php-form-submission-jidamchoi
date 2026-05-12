@@ -1,11 +1,12 @@
 <?php include 'includes/header.php'; ?>
 
-<form action="collecting-form-data.php" method="POST">
+<form action="collecting-form-data.php" method="POST" enctype="multipart/form-data">
   <p>Name:     <input type="text" name="name"></p>
   <p>Age:      <input type="text" name="age"></p>
   <p>Email:    <input type="text" name="email"></p>
   <p>Password: <input type="password" name="pwd"></p>
   <p>Bio:      <textarea name="bio"></textarea></p>
+  <p>File:     <input type="file" name="image"/></p>
   <p>Contact preference:
     <select name="preferences">
       <option value="email">Email</option>
@@ -20,6 +21,11 @@
   <p><input type="submit" value="Save"></p>
 </form>
 
+<h3>Post</h3>
 <pre><?php var_dump($_POST); ?></pre>
+<h3>Files</h3>
+<pre><?php var_dump($_FILES); ?></pre>
+<h3>Server</h3>
+<pre><?php var_dump($_SERVER); ?></pre>
 
 <?php include 'includes/footer.php'; ?>
